@@ -39,8 +39,8 @@ import {
 interface BlogPost {
   id: number;
   title: string;
-  category: keyof typeof categoryColors;
-  difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
+  category: string;
+  difficulty: string;
   readTime: string;
   date: string;
   featured: boolean;
@@ -55,7 +55,7 @@ interface BlogPost {
 
 import { BLOG_POSTS } from '../../data/portfolio';
 
-const blogPosts = BLOG_POSTS;
+const blogPosts: BlogPost[] = BLOG_POSTS;
 
 const categories = ['All', 'DevOps', 'Cloud Infrastructure', 'Full-Stack'];
 

@@ -42,7 +42,7 @@ interface CaseStudy {
   id: number;
   title: string;
   subtitle: string;
-  category: keyof typeof categoryColors;
+  category: string;
   featured: boolean;
   timeline: {
     start: string;

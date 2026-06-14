@@ -72,7 +72,7 @@ export const AnimatedBackground: React.FC<{ children: React.ReactNode }> = ({ ch
 // Tech Badge Component
 interface TechBadgeProps {
   name: string;
-  category?: keyof typeof categoryColors;
+  category?: string;
   size?: 'sm' | 'md' | 'lg';
   animated?: boolean;
 }

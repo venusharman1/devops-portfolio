@@ -268,7 +268,7 @@ export const BIO_STATS = [
   { label: 'Drift Restored', value: '100%' },
 ];
 
-export const CASE_STUDIES = [
+export const CASE_STUDIES = [ // as const // as const
   {
     id: 1,
     title: "Resolving Kubernetes OOMKilled Outage & Memory Leaks",
@@ -405,9 +405,9 @@ export const CASE_STUDIES = [
       pattern: "High-Availability DB Replication & Pooled Connections"
     }
   }
-];
+] as const;
 
-export const BLOG_POSTS = [
+export const BLOG_POSTS = [ // as const
   {
     id: 1,
     title: "Scaling to Millions: A Deep Dive into Kubernetes Pod Auto-scaling Patterns",
@@ -591,7 +591,7 @@ Below is an extract of the signing workflow:
 - name: Sign container image
   run: |
     cosign sign --yes --key env://COSIGN_PRIVATE_KEY \
-      ${{ steps.meta.outputs.tags }}
+      \${{ steps.meta.outputs.tags }}
   env:
     COSIGN_PRIVATE_KEY: \${{ secrets.COSIGN_PRIVATE_KEY }}
     COSIGN_PASSWORD: \${{ secrets.COSIGN_PASSWORD }}
@@ -599,7 +599,7 @@ Below is an extract of the signing workflow:
 
 By enforcing image verification, you protect your clusters from rogue images and malicious updates.
     `
-  }
+  },
 ];
 
 export const SPECIALIZATIONS = [
